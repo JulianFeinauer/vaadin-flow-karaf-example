@@ -9,9 +9,9 @@ import com.vaadin.flow.theme.lumo.Lumo;
 /**
  * The Hello World View of the Servlet mapped to "/"
  */
-@Route("")
+// @Route("")
 // Need to explicitly declare the Lumo until https://github.com/vaadin/flow/issues/4847 is fixed
-@Theme(Lumo.class)
+// @Theme(Lumo.class)
 // @PWA(name = "Project Base for Vaadin Flow", shortName = "Project Base")
 public class DefaultView extends VerticalLayout {
 

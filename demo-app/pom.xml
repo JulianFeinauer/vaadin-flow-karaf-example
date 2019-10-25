@@ -93,5 +93,35 @@
     <!--        </dependency>-->
     <!--    </dependencies>-->
 
+    <build>
+        <plugins>
+<!--            <plugin>-->
+<!--                <groupId>biz.aQute.bnd</groupId>-->
+<!--                <artifactId>bnd-maven-plugin</artifactId>-->
+<!--                <version>4.1.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>bnd-process</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Vaadin-OSGi-Extender>true</Vaadin-OSGi-Extender>
+<!--                        &lt;!&ndash;                        <Export-Package>org.foo.myproject.api</Export-Package>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        <Private-Package>org.foo.myproject.*</Private-Package>&ndash;&gt;-->
+<!--                        <Bundle-Activator>org.pragmaticminds.osgi.ExampleActivator</Bundle-Activator>-->
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>

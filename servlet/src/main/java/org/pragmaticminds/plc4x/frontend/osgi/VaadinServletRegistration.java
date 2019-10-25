@@ -11,38 +11,26 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.Servlet;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
 import java.util.Hashtable;
 
 /**
  * Register a VaadinServlet via HTTP Whiteboard specification
  *
  * Needs jetty, http, karaf-feature, pax-war
+ *
+ * This is probably no longer needed, as {@link FixedVaadinServlet}
+ * is loaded now via DS
  */
-@Component(immediate = true)
+// @Component(immediate = true)
+@Deprecated
 public class VaadinServletRegistration {
 
     private static final Logger logger = LoggerFactory.getLogger(VaadinServletRegistration.class);
 
     // Store the registration for unregistration
-    private ServiceRegistration<Servlet> registration;
+    private ServiceRegistration<?> registration;
 
-    /**
-     * This class is a workaround for #4367. This will be removed after the
-     * issue is fixed.
-     */
-    private static class FixedVaadinServlet extends VaadinServlet {
-        @Override
-        public void init(ServletConfig servletConfig) throws ServletException {
-            logger.info("Initializing servlet!");
-            super.init(servletConfig);
-
-            getService().setClassLoader(getClass().getClassLoader());
-        }
-    }
-
-    @Activate
+    // @Activate
     void activate(BundleContext ctx) {
         logger.info("Activating Vaadin Servlet!");
         Hashtable<String, Object> properties = new Hashtable<>();
@@ -51,11 +39,16 @@ public class VaadinServletRegistration {
                 true);
         properties.put(HttpWhiteboardConstants.HTTP_WHITEBOARD_SERVLET_PATTERN,
                 "/*");
-        registration = ctx.registerService(Servlet.class, new FixedVaadinServlet(),
+        registration = ctx.registerService(
+            new String[]{
+                Servlet.class.getTypeName(),
+                VaadinServlet.class.getTypeName()
+            },
+            new FixedVaadinServlet(),
             properties);
     }
 
-    @Deactivate
+    // @Deactivate
     void deactivate() {
         logger.info("Deactivating Vaadin servlet!");
         if (registration != null) {

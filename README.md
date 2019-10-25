@@ -16,6 +16,7 @@ Currently there are 3 features available.
 * vaadin-base: Contains the vaadin core without components
 * vaadin-full: Contains the vaadin core and lots of vaadin components
 * vaadin-servlet: starts the vaadin servlet (necessary to have a running application)
+* vaadin-demo: Contains multiple Vaadin Views (Pages) that should be automatically registered
 
 ## Quickstart
 
@@ -28,3 +29,8 @@ and install the `vaadin-servlet` feature with
 feature:install vaadin-servlet
 ```
 Then go to `localhost:8181` and you should see a Vaadin generated page.
+As soon as you install the `vaadin-demo` feature with
+ ```
+ feature:install vaadin-demo
+ ```
+ The main page should change and some navigation should work.

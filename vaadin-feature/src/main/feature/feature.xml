@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="karaf-feature">
 
+    <!-- Minimal Vaadin Demo -->
+    <feature name="vaadin-demo" description="Vaadin Servlet" version="1.0.0.SNAPSHOT">
+        <feature prerequisite="true" dependency="false">vaadin-servlet</feature>
+        <!-- Vaadin Servlet Starter -->
+        <bundle>mvn:org.pragmaticminds.plc4x/demo-app/1.0.0-SNAPSHOT</bundle>
+    </feature>
+
     <feature name="vaadin-servlet" description="Vaadin Servlet" version="1.0.0.SNAPSHOT">
         <feature prerequisite="true" dependency="false">vaadin-full</feature>
         <!-- Vaadin Servlet Starter -->
