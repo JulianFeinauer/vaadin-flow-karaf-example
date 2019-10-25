@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>server-parent</artifactId>
+        <groupId>org.pragmaticminds.plc4x</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>demo-app</artifactId>
+    <packaging>bundle</packaging>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <vaadin.version>13.0.0</vaadin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-server</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-client</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-osgi</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-ordered-layout-flow</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-html-components</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-button-flow</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <!--        <dependency>-->
+    <!--            <groupId>org.osgi</groupId>-->
+    <!--            <artifactId>osgi.cmpn</artifactId>-->
+    <!--            <version>7.0.0</version>-->
+    <!--            <scope>provided</scope>-->
+    <!--        </dependency>-->
+
+    <!--        <dependency>-->
+    <!--            <groupId>org.osgi</groupId>-->
+    <!--            <artifactId>org.osgi.core</artifactId>-->
+    <!--            <version>6.0.0</version>-->
+    <!--            <scope>provided</scope>-->
+    <!--        </dependency>-->
+
+    <!--        &lt;!&ndash; Added to provide logging output as Flow uses &ndash;&gt;-->
+    <!--        &lt;!&ndash; the unbound SLF4J no-operation (NOP) logger implementation &ndash;&gt;-->
+    <!--        <dependency>-->
+    <!--            <groupId>org.slf4j</groupId>-->
+    <!--            <artifactId>slf4j-simple</artifactId>-->
+    <!--            <scope>provided</scope>-->
+    <!--        </dependency>-->
+    <!--    </dependencies>-->
+
+
+</project>
