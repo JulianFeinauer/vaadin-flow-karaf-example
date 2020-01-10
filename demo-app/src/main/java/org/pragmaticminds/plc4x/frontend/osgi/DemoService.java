@@ -21,7 +21,15 @@ public class DemoService {
     logger.info("Binding DemoService to Servlet...");
 
     if (servlet instanceof VaadinServlet) {
-      ((VaadinServlet) servlet).getService().getRouter().getRegistry().setRoute("admin", DemoView.class, Collections.emptyList());
+      try {
+        if (((VaadinServlet) servlet).getService() != null) {
+          ((VaadinServlet) servlet).getService().getRouter().getRegistry().setRoute("admin", DemoView.class, Collections.emptyList());
+        } else {
+          logger.warn("Unable to Install dynamic Route 'admin'. No Servlet Service found!");
+        }
+      } catch (NullPointerException e) {
+        e.printStackTrace();
+      }
     } else {
       logger.info("Found non-vaadin Servlet {}, skipping", servlet);
     }

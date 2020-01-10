@@ -19,7 +19,7 @@
                 <artifactId>vaadin-bom</artifactId>
                 <type>pom</type>
                 <scope>import</scope>
-                <version>13.0.4</version>
+                <version>${vaadin-bom.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

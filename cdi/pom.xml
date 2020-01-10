@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>vaadin-flow-karaf-example</artifactId>
+        <groupId>org.pragmaticminds.plc4x</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cdi-bundle</artifactId>
+    <packaging>bundle</packaging>
+
+    <properties>
+        <aries-cdi.version>1.0.2</aries-cdi.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+        <dependency>
+            <groupId>org.apache.aries.cdi</groupId>
+            <artifactId>org.apache.aries.cdi.bom</artifactId>
+            <version>${aries-cdi.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- CDI Specification -->
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.aries.cdi</groupId>
+            <artifactId>org.apache.aries.cdi.extra</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- -->
+        <dependency>
+            <groupId>org.apache.aries.cdi</groupId>
+            <artifactId>org.apache.aries.cdi.extender</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.cdi</artifactId>
+            <version>1.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Vaadin-OSGi-Extender>true</Vaadin-OSGi-Extender>
+                        <!--                        &lt;!&ndash;                        <Export-Package>org.foo.myproject.api</Export-Package>&ndash;&gt;-->
+                        <!--                        &lt;!&ndash;                        <Private-Package>org.foo.myproject.*</Private-Package>&ndash;&gt;-->
+                        <!--                        <Bundle-Activator>org.pragmaticminds.osgi.ExampleActivator</Bundle-Activator>-->
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

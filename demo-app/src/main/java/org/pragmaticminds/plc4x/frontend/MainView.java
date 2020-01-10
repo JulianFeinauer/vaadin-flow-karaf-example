@@ -7,6 +7,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.Theme;
 import com.vaadin.flow.theme.lumo.Lumo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The main view contains a button and a click listener.
@@ -17,7 +19,10 @@ import com.vaadin.flow.theme.lumo.Lumo;
 // @PWA(name = "Project Base for Vaadin Flow", shortName = "Project Base")
 public class MainView extends VerticalLayout {
 
+    private static final Logger logger = LoggerFactory.getLogger(MainView.class);
+
     public MainView() {
+        logger.info("Showing Main View");
         Button button = new Button("Click me once again, Julian",
             event -> {
                 Notification.show("Clicked!");

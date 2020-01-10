@@ -1,0 +1,48 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="landing-page-app-emblem">
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+            }
+        </style>
+
+        <div id="appEmblem"
+             style="
+                width: 200px;
+                height: 200px;
+                text-align: center;
+                vertical-align: bottom;
+                border-radius: 10px;
+                padding-top: 20px;"
+             onmouseover="this.style.backgroundColor='rgba(0,0,255,.2)'"
+             onmousedown="this.style.backgroundColor='rgba(0,0,255,.5)'"
+             onmouseout="this.style.backgroundColor='transparent'"
+        >
+            <div id="imageFrame" style="width: 128px;height: 128px;display: block;margin: 0 auto;">
+                <img id="image" src="" style="height: auto;width: auto;max-width: 128px;max-height: 120px;" alt="not found!" />
+            </div>
+            <div id="textFrame" style="display: block;">
+
+            </div>
+
+        </div>
+
+    </template>
+
+    <script>
+        class LandingPageAppEmblem extends Polymer.Element {
+            static get is() {
+                return 'landing-page-app-emblem';
+            }
+
+            static get properties() {
+                return {
+                    // Declare your properties here.
+                };
+            }
+        }
+        customElements.define(LandingPageAppEmblem.is, LandingPageAppEmblem);
+    </script>
+</dom-module>

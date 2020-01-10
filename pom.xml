@@ -13,7 +13,12 @@
         <module>feature-generator</module>
         <module>demo-app</module>
         <module>vaadin-feature</module>
+        <module>cdi</module>
+        <module>main-view</module>
     </modules>
+    <properties>
+        <vaadin-bom.version>13.0.0</vaadin-bom.version>
+    </properties>
     <packaging>pom</packaging>
 
     <repositories>
@@ -35,7 +40,7 @@
                 <artifactId>vaadin-bom</artifactId>
                 <type>pom</type>
                 <scope>import</scope>
-                <version>13.0.0</version>
+                <version>${vaadin-bom.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

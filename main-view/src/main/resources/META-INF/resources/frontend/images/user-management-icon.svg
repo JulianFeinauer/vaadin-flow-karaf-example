@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 960 960" style="enable-background:new 0 0 960 960;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFED6C;}
+	.st1{fill:#33B98C;}
+	.st2{fill:none;stroke:#E6E6E6;stroke-width:20.2001;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<g>
+	<circle class="st0" cx="480.7" cy="228" r="48.9"/>
+	<path class="st0" d="M547.4,383.7H413.9v-43.9c0-36.9,29.9-66.7,66.7-66.7l0,0c36.9,0,66.7,29.9,66.7,66.7v43.9H547.4z"/>
+	<circle class="st1" cx="269.6" cy="625.1" r="48.9"/>
+	<path class="st1" d="M336.3,780.9H202.8V737c0-36.9,29.9-66.7,66.7-66.7l0,0c36.9,0,66.7,29.9,66.7,66.7L336.3,780.9L336.3,780.9z"
+		/>
+	<circle class="st1" cx="480" cy="625.1" r="48.9"/>
+	<path class="st1" d="M546.7,780.9H413.3V737c0-36.9,29.9-66.7,66.7-66.7l0,0c36.9,0,66.7,29.9,66.7,66.7V780.9z"/>
+	<circle class="st1" cx="690.4" cy="625.1" r="48.9"/>
+	<path class="st1" d="M757.2,780.9H623.7V737c0-36.9,29.9-66.7,66.7-66.7l0,0c36.9,0,66.7,29.9,66.7,66.7L757.2,780.9L757.2,780.9z"
+		/>
+	<line class="st2" x1="480.7" y1="415.8" x2="480.7" y2="538.4"/>
+	<polyline class="st2" points="690.4,538.4 690.4,477.1 269.6,477.1 269.6,538.4 	"/>
+</g>
+</svg>

@@ -1,0 +1,42 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/vaadin-button/src/vaadin-button.html">
+
+<dom-module id="no-propagation-button">
+    <template>
+        <style>
+            :host {
+                width: 100%;
+            }
+            :hover {
+                background-color: white;
+            }
+            :active {
+                background-color: darkgray;
+                border: 2px solid dimgray;
+            }
+        </style>
+        <vaadin-button on-click="handleClickButton" theme="icon" id="vaadinButton">
+
+        </vaadin-button>
+    </template>
+
+    <script>
+        class NoPropagationButton extends Polymer.Element {
+            static get is() {
+                return 'no-propagation-button';
+            }
+
+            static get properties() {
+                return {
+                    // Declare your properties here.
+                };
+            }
+
+            handleClickButton(event){
+                event.stopPropagation();
+            }
+
+        }
+        customElements.define(NoPropagationButton.is, NoPropagationButton);
+    </script>
+</dom-module>

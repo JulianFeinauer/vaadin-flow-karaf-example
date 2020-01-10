@@ -1,0 +1,92 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="styles.html">
+
+<dom-module id="desktop-template">
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+            }
+            .laempe_yellow_background {
+                background-color: var(--lumo-contrast-5pct);
+            }
+            laempe-app-emblem {
+                margin: 40px;
+            }
+            #content-frame > app-emblem {
+                margin: 20px;
+            }
+            img#bottom-logo {
+                padding-left: calc(50% - var(--logo-image-width) / 2);
+                padding-top: calc(50px - var(--logo-image-height) / 2);
+            }
+        </style>
+        <vaadin-vertical-layout theme="margin" id="outer-frame" style="width: 100%; height: 100vh; margin: 0;">
+            <!-- header frame -->
+            <div id="header-frame" style="height: var(--header-height); margin: 0; width: 100%; background-image: url('frontend/images/header.png');"></div>
+
+            <!-- title frame -->
+            <div id="top-text-frame" style="height: 80px; width: 100%;">
+                <div style="text-align: center; font-size: 50px;" id="headline">
+                    Apps für unsere Maschinen
+                </div>
+            </div>
+
+            <!-- content frame -->
+            <div id="content-outer-frame" style="
+                min-height: calc(100vh - 167px - 80px - 110px);
+                max-height: calc(100vh - 167px - 80px - 110px);
+                height: calc(100vh - 167px - 80px - 110px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            ">
+                <div id="content-middle-frame" style="
+                    margin: auto;
+                    max-height: 100%;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                ">
+                    <div id="content-frame" style="
+                        display: flex;
+                        justify-content: center;
+                        padding-left: 40px;
+                        padding-right: 40px;
+                        flex-wrap: wrap;
+                    "></div>
+                </div>
+            </div>
+
+            <!-- bottom frame -->
+            <div id="bottom-frame"
+                 style="height: 131px; max-height: 131px; overflow-y: hidden; width: 100%;">
+                <div id="bottom-yellow-stripe" class="laempe_yellow_background" style="height: 10px;"></div>
+                <div id="bottom-logo-frame">
+                    <img id="bottom-logo" src="frontend/images/logo.png"
+                         style="width: auto; height: 75px;" alt="image not found">
+                </div>
+            </div>
+
+
+            <!-- shadow frame below header frame -->
+            <div style="position: absolute; min-width: 100vw; height: 20px; top: calc(var(--header-height) + 80px); display: block; box-shadow: inset 0 20px 10px -10px rgba(0,0,0,.2);"></div>
+            <!-- shadow frame below header frame -->
+            <div style="position: absolute; min-width: 100vw; height: 20px; bottom: 131px; display: block; box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,.2);"></div>
+        </vaadin-vertical-layout>
+    </template>
+    <script>
+        class LandingPageDesktopTemplate extends Polymer.Element {
+            static get is() {
+                return 'desktop-template';
+            }
+
+            static get properties() {
+                return {
+                    // Declare your properties here.
+                };
+            }
+        }
+
+        customElements.define(LandingPageDesktopTemplate.is, LandingPageDesktopTemplate);
+    </script>
+</dom-module>
