@@ -34,3 +34,11 @@ As soon as you install the `vaadin-demo` feature with
  feature:install vaadin-demo
  ```
  The main page should change and some navigation should work.
+ 
+ ## Reproduce Issue
+ 
+ * Install feature-repo
+ * Install feature vaadin-servlet
+ * Install bundle `bundle:install -s mvn:org.pragmaticminds.plc4x/main-view/1.0.0-SNAPSHOT`
+ * Go to localhost:8181
+ * Why the heck is this Exception there... ?
